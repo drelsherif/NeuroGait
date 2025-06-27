@@ -375,24 +375,60 @@ class GaitAnalyzer {
         }
     }
     
+    // GaitAnalyzer.swift
+
+    // Replace the existing function with this one
     private func performComprehensiveAnalysis(_ session: GaitSession) -> GaitAnalysisResults {
         let duration = session.endTime?.timeIntervalSince(session.startTime) ?? 0
+        let frames = session.frames
+        
+        // --- NEW: Process data for the speed chart ---
+        let speedData = calculateSpeedData(from: frames)
         
         // Analyze all collected frames for comprehensive metrics
-        let finalMetrics = calculateFinalMetrics(from: session.frames)
-        let freezingEpisodes = analyzeFreezingEpisodes(from: session.frames)
-        let anomalies = analyzeGaitAnomalies(from: session.frames)
+        let finalMetrics = calculateFinalMetrics(from: frames)
+        let freezingEpisodes = analyzeFreezingEpisodes(from: frames)
+        let anomalies = analyzeGaitAnomalies(from: frames)
         
         return GaitAnalysisResults(
             sessionId: session.id,
             duration: duration,
-            totalFrames: session.frames.count,
+            totalFrames: frames.count,
             finalMetrics: finalMetrics,
             freezingEpisodes: freezingEpisodes,
             anomalies: anomalies,
-            spatialAnalysis: calculateSpatialAnalysis(from: session.frames),
-            temporalAnalysis: calculateTemporalAnalysis(from: session.frames)
+            spatialAnalysis: calculateSpatialAnalysis(from: frames), // These still need implementation
+            temporalAnalysis: calculateTemporalAnalysis(from: frames), // These still need implementation
+            speedOverTime: speedData // Pass the newly created chart data
         )
+    }
+
+    // --- NEW: Add this helper function to the GaitAnalyzer class ---
+    private func calculateSpeedData(from frames: [GaitFrame]) -> [SpeedDataPoint] {
+        guard let startTime = frames.first?.timestamp, frames.count > 30 else { return [] }
+        
+        var dataPoints: [SpeedDataPoint] = []
+        
+        // Create a data point roughly every second (assuming ~30-60 fps)
+        for i in stride(from: 0, to: frames.count, by: 30) {
+            let frame = frames[i]
+            let previousIndex = max(0, i - 30)
+            let previousFrame = frames[previousIndex]
+            
+            guard let startPos = previousFrame.joints[ARSkeleton.JointName.root.rawValue],
+                  let endPos = frame.joints[ARSkeleton.JointName.root.rawValue] else {
+                continue
+            }
+            
+            let time = frame.timestamp.timeIntervalSince(startTime)
+            let distance = simd_distance(startPos, endPos)
+            let timeInterval = frame.timestamp.timeIntervalSince(previousFrame.timestamp)
+            let speed = timeInterval > 0 ? Double(distance) / timeInterval : 0.0
+            
+            dataPoints.append(SpeedDataPoint(time: time, speed: speed))
+        }
+        
+        return dataPoints
     }
     
     private func calculateFinalMetrics(from frames: [GaitFrame]) -> GaitMetrics {

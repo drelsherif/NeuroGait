@@ -1,17 +1,19 @@
-//
-//  GaitDataModels.swift
-//  NeuroGait
-//
-//  Core data structures for clinical gait analysis
-//
+// GaitDataModels.swift
 
 import Foundation
 import simd
 import ARKit
 import CoreData
 
-// MARK: - Core Data Models
+// NEW: A simple data structure for our charts.
+struct SpeedDataPoint: Identifiable {
+    let id = UUID()
+    let time: Double // X-axis value (e.g., time in seconds)
+    let speed: Double  // Y-axis value (e.g., walking speed)
+}
+
 struct GaitFrame {
+    // ... (rest of this struct is unchanged)
     let timestamp: Date
     let joints: [String: simd_float3]
     let transform: simd_float4x4
@@ -26,6 +28,7 @@ struct GaitFrame {
 }
 
 struct GaitMetrics {
+    // ... (this struct is unchanged)
     let stepCount: Int
     let cadence: Double // steps per minute
     let strideLength: Double // meters
@@ -43,6 +46,20 @@ struct GaitMetrics {
     let stepRegularity: Double // coefficient of variation
 }
 
+struct GaitAnalysisResults {
+    let sessionId: UUID
+    let duration: TimeInterval
+    let totalFrames: Int
+    let finalMetrics: GaitMetrics
+    let freezingEpisodes: [FreezingEpisode]
+    let anomalies: [GaitAnomaly]
+    let spatialAnalysis: SpatialAnalysis
+    let temporalAnalysis: TemporalAnalysis
+    // NEW: Add a property to hold the data for the speed chart.
+    let speedOverTime: [SpeedDataPoint]
+}
+
+// ... (The rest of the file: FreezingEpisode, GaitAnomaly, ClinicalScores, etc., remains unchanged)
 struct FreezingEpisode {
     let startTime: Date
     let duration: TimeInterval
@@ -146,17 +163,6 @@ class GaitSession {
         self.id = UUID()
         self.startTime = Date()
     }
-}
-
-struct GaitAnalysisResults {
-    let sessionId: UUID
-    let duration: TimeInterval
-    let totalFrames: Int
-    let finalMetrics: GaitMetrics
-    let freezingEpisodes: [FreezingEpisode]
-    let anomalies: [GaitAnomaly]
-    let spatialAnalysis: SpatialAnalysis
-    let temporalAnalysis: TemporalAnalysis
 }
 
 struct SpatialAnalysis {

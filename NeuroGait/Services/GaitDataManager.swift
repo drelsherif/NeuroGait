@@ -11,6 +11,10 @@ import CoreData
 // MARK: - Gait Data Manager
 class GaitDataManager {
     
+    // THIS IS THE CRUCIAL LINE THAT FIXES THE PROBLEM
+    // It creates a single, shared instance that the rest of the app will use.
+    static let shared = GaitDataManager()
+    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "NeuroGait")
         container.loadPersistentStores { _, error in

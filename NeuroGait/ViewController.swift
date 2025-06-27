@@ -119,17 +119,16 @@ class ViewController: UIViewController {
     @objc private func startButtonTapped() {
         print("🚀 Launching Gait Analysis...")
         
-        // Reference the Main storyboard file
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        // Instantiate the GaitAnalysisViewController using its Storyboard ID
-        guard let gaitVC = storyboard.instantiateViewController(withIdentifier: "GaitAnalysisViewController") as? GaitAnalysisViewController else {
-            // This error will trigger if the Storyboard ID is not set correctly in the storyboard file.
-            fatalError("Could not instantiate GaitAnalysisViewController from storyboard. Check the Storyboard ID.")
+        // Instantiate the NAVIGATION CONTROLLER by its Storyboard ID
+        guard let navController = storyboard.instantiateViewController(withIdentifier: "GaitAnalysisNavigationController") as? UINavigationController else {
+            fatalError("Could not instantiate GaitAnalysisNavigationController from storyboard.")
         }
-        
-        // Present it modally (full screen)
-        gaitVC.modalPresentationStyle = .fullScreen
-        present(gaitVC, animated: true)
+
+        // Present the entire navigation controller
+        navController.modalPresentationStyle = .fullScreen
+        present(navController, animated: true)
     }
+       
 }
