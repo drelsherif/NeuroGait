@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-636" y="4"/>
+        </scene>
+        <scene sceneID="abC-de-fgh">
+            <objects>
+                <viewController storyboardIdentifier="GaitAnalysisViewController" id="123-45-678" customClass="GaitAnalysisViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XYZ-ab-cde">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arView key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ARV-ie-w01">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </arView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Met-ri-csV">
+                                <rect key="frame" x="16" y="75" width="361" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steps: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stp-Co-untL">
+                                        <rect key="frame" x="8" y="8" width="162.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadence: 0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cad-en-ceL">
+                                        <rect key="frame" x="8" y="31" width="162.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Frz-in-gInd">
+                                        <rect key="frame" x="323" y="15" width="30" height="30"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="Wdth-Const"/>
+                                            <constraint firstAttribute="height" constant="30" id="Hght-Const"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Stp-Co-untL" firstAttribute="leading" secondItem="Met-ri-csV" secondAttribute="leading" constant="8" id="Ld1-Const"/>
+                                    <constraint firstItem="Frz-in-gInd" firstAttribute="centerY" secondItem="Met-ri-csV" secondAttribute="centerY" id="CnY-Const"/>
+                                    <constraint firstItem="Stp-Co-untL" firstAttribute="width" secondItem="Met-ri-csV" secondAttribute="width" multiplier="0.45" id="Wdth2-Const"/>
+                                    <constraint firstItem="Cad-en-ceL" firstAttribute="top" secondItem="Stp-Co-untL" secondAttribute="bottom" constant="2" id="Top2-Const"/>
+                                    <constraint firstItem="Cad-en-ceL" firstAttribute="leading" secondItem="Met-ri-csV" secondAttribute="leading" constant="8" id="Ld2-Const"/>
+                                    <constraint firstAttribute="trailing" secondItem="Frz-in-gInd" secondAttribute="trailing" constant="8" id="Trl-Const"/>
+                                    <constraint firstAttribute="height" constant="60" id="Hght2-Const"/>
+                                    <constraint firstItem="Stp-Co-untL" firstAttribute="top" secondItem="Met-ri-csV" secondAttribute="top" constant="8" id="Top1-Const"/>
+                                    <constraint firstItem="Cad-en-ceL" firstAttribute="width" secondItem="Stp-Co-untL" secondAttribute="width" id="Wdth3-Const"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Initializing AR Session..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sts-La-bel">
+                                <rect key="frame" x="16" y="757" width="361" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rec-Bu-tton">
+                                <rect key="frame" x="146.5" y="683" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Hght3-Const"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="Wdth4-Const"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                <connections>
+                                    <action selector="recordingButtonTapped:" destination="123-45-678" eventType="touchUpInside" id="Act-ion-001"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sfg-ar-Gde"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ARV-ie-w01" firstAttribute="top" secondItem="XYZ-ab-cde" secondAttribute="top" id="Top3-Const"/>
+                            <constraint firstItem="Sfg-ar-Gde" firstAttribute="bottom" secondItem="Sts-La-bel" secondAttribute="bottom" constant="40" id="Btm1-Const"/>
+                            <constraint firstItem="Met-ri-csV" firstAttribute="leading" secondItem="Sfg-ar-Gde" secondAttribute="leading" constant="16" id="Ld3-Const"/>
+                            <constraint firstItem="Sfg-ar-Gde" firstAttribute="trailing" secondItem="Met-ri-csV" secondAttribute="trailing" constant="16" id="Trl2-Const"/>
+                            <constraint firstAttribute="trailing" secondItem="ARV-ie-w01" secondAttribute="trailing" id="Trl3-Const"/>
+                            <constraint firstItem="ARV-ie-w01" firstAttribute="leading" secondItem="XYZ-ab-cde" secondAttribute="leading" id="Ld4-Const"/>
+                            <constraint firstItem="Sfg-ar-Gde" firstAttribute="trailing" secondItem="Sts-La-bel" secondAttribute="trailing" constant="16" id="Trl4-Const"/>
+                            <constraint firstItem="Sts-La-bel" firstAttribute="leading" secondItem="Sfg-ar-Gde" secondAttribute="leading" constant="16" id="Ld5-Const"/>
+                            <constraint firstItem="Sts-La-bel" firstAttribute="top" secondItem="Rec-Bu-tton" secondAttribute="bottom" constant="24" id="Top4-Const"/>
+                            <constraint firstItem="Met-ri-csV" firstAttribute="top" secondItem="Sfg-ar-Gde" secondAttribute="top" constant="16" id="Top5-Const"/>
+                            <constraint firstItem="Rec-Bu-tton" firstAttribute="centerX" secondItem="Sfg-ar-Gde" secondAttribute="centerX" id="CnX-Const"/>
+                            <constraint firstAttribute="bottom" secondItem="ARV-ie-w01" secondAttribute="bottom" id="Btm2-Const"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="ARV-ie-w01" id="out-ARV"/>
+                        <outlet property="cadenceLabel" destination="Cad-en-ceL" id="out-Cad"/>
+                        <outlet property="freezingIndicator" destination="Frz-in-gInd" id="out-Frz"/>
+                        <outlet property="metricsView" destination="Met-ri-csV" id="out-Met"/>
+                        <outlet property="recordingButton" destination="Rec-Bu-tton" id="out-Rec"/>
+                        <outlet property="statusLabel" destination="Sts-La-bel" id="out-Sts"/>
+                        <outlet property="stepCountLabel" destination="Stp-Co-untL" id="out-Stp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z1-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="4"/>
+        </scene>
+        <scene sceneID="Res-ul-tsV">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewController" id="RVC-id-001" customClass="ResultsViewController" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rvc-Vw-001">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scr-ol-lVw">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Con-tnt-Vw">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdr-Vw-001">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="128"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttl-Lbl-001">
+                                                        <rect key="frame" x="20" y="20" width="353" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dte-Lbl-001">
+                                                        <rect key="frame" x="20" y="49" width="353" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Dte-Lbl-001" firstAttribute="leading" secondItem="Hdr-Vw-001" secondAttribute="leading" constant="20" symbolic="YES" id="Ld-Dte-Const"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Ttl-Lbl-001" secondAttribute="trailing" constant="20" symbolic="YES" id="Trl-Ttl-Const"/>
+                                                    <constraint firstItem="Ttl-Lbl-001" firstAttribute="top" secondItem="Hdr-Vw-001" secondAttribute="top" constant="20" symbolic="YES" id="Top-Ttl-Const"/>
+                                                    <constraint firstAttribute="height" constant="128" id="Hght-Hdr-Const"/>
+                                                    <constraint firstItem="Dte-Lbl-001" firstAttribute="top" secondItem="Ttl-Lbl-001" secondAttribute="bottom" constant="8" symbolic="YES" id="Top-Dte-Const"/>
+                                                    <constraint firstItem="Ttl-Lbl-001" firstAttribute="leading" secondItem="Hdr-Vw-001" secondAttribute="leading" constant="20" symbolic="YES" id="Ld-Ttl-Const"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Dte-Lbl-001" secondAttribute="trailing" constant="20" symbolic="YES" id="Trl-Dte-Const"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Stk-Vw-Main">
+                                                <rect key="frame" x="16" y="144" width="361" height="600"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rsk-Ind-Vw">
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Risk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rsk-Lbl-001">
+                                                                <rect key="frame" x="8" y="8" width="345" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recommendation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rec-Lbl-001">
+                                                                <rect key="frame" x="8" y="37" width="345" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Rsk-Lbl-001" firstAttribute="leading" secondItem="Rsk-Ind-Vw" secondAttribute="leading" constant="8" id="Ld-Rsk-Const"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Rsk-Lbl-001" secondAttribute="trailing" constant="8" id="Trl-Rsk-Const"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Rec-Lbl-001" secondAttribute="trailing" constant="8" id="Trl-Rec-Const"/>
+                                                            <constraint firstItem="Rec-Lbl-001" firstAttribute="top" secondItem="Rsk-Lbl-001" secondAttribute="bottom" constant="8" id="Top-Rec-Const"/>
+                                                            <constraint firstItem="Rec-Lbl-001" firstAttribute="leading" secondItem="Rsk-Ind-Vw" secondAttribute="leading" constant="8" id="Ld-Rec-Const"/>
+                                                            <constraint firstItem="Rsk-Lbl-001" firstAttribute="top" secondItem="Rsk-Ind-Vw" secondAttribute="top" constant="8" id="Top-Rsk-Const"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spt-Met-Vw">
+                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmp-Met-Vw">
+                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cln-Scr-Vw">
+                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Key-Fnd-Vw">
+                                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cht-Cnt-Vw">
+                                                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="Hght-Cht-Const"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="600" id="Hght-Stk-Const"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-Stk-Vw">
+                                                <rect key="frame" x="16" y="760" width="361" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Exp-Btn-001">
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Export"/>
+                                                        <connections>
+                                                            <action selector="exportButtonTapped:" destination="RVC-id-001" eventType="touchUpInside" id="Act-Exp-Btn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Shr-Btn-001">
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Share"/>
+                                                        <connections>
+                                                            <action selector="shareButtonTapped:" destination="RVC-id-001" eventType="touchUpInside" id="Act-Shr-Btn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Prg-Btn-001">
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="filled" title="Progress"/>
+                                                        <connections>
+                                                            <action selector="progressButtonTapped:" destination="RVC-id-001" eventType="touchUpInside" id="Act-Prg-Btn"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Hght-Btn-Stk"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Btn-Stk-Vw" secondAttribute="trailing" constant="16" id="Trl-Btn-Stk"/>
+                                            <constraint firstItem="Stk-Vw-Main" firstAttribute="leading" secondItem="Con-tnt-Vw" secondAttribute="leading" constant="16" id="Ld-Stk-Main"/>
+                                            <constraint firstItem="Btn-Stk-Vw" firstAttribute="leading" secondItem="Con-tnt-Vw" secondAttribute="leading" constant="16" id="Ld-Btn-Stk"/>
+                                            <constraint firstItem="Hdr-Vw-001" firstAttribute="leading" secondItem="Con-tnt-Vw" secondAttribute="leading" id="Ld-Hdr-Vw"/>
+                                            <constraint firstItem="Btn-Stk-Vw" firstAttribute="top" secondItem="Stk-Vw-Main" secondAttribute="bottom" constant="16" id="Top-Btn-Stk"/>
+                                            <constraint firstItem="Hdr-Vw-001" firstAttribute="top" secondItem="Con-tnt-Vw" secondAttribute="top" id="Top-Hdr-Vw"/>
+                                            <constraint firstAttribute="trailing" secondItem="Stk-Vw-Main" secondAttribute="trailing" constant="16" id="Trl-Stk-Main"/>
+                                            <constraint firstAttribute="height" constant="1000" id="Hght-Cnt-Vw"/>
+                                            <constraint firstAttribute="trailing" secondItem="Hdr-Vw-001" secondAttribute="trailing" id="Trl-Hdr-Vw"/>
+                                            <constraint firstItem="Stk-Vw-Main" firstAttribute="top" secondItem="Hdr-Vw-001" secondAttribute="bottom" constant="16" id="Top-Stk-Main"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Con-tnt-Vw" firstAttribute="width" secondItem="Scr-ol-lVw" secondAttribute="width" id="Wdth-Cnt-Vw"/>
+                                    <constraint firstItem="Con-tnt-Vw" firstAttribute="top" secondItem="Scr-ol-lVw" secondAttribute="top" id="Top-Cnt-Vw"/>
+                                    <constraint firstItem="Con-tnt-Vw" firstAttribute="leading" secondItem="Scr-ol-lVw" secondAttribute="leading" id="Ld-Cnt-Vw"/>
+                                    <constraint firstItem="Con-tnt-Vw" firstAttribute="bottom" secondItem="Scr-ol-lVw" secondAttribute="bottom" id="Btm-Cnt-Vw"/>
+                                    <constraint firstItem="Con-tnt-Vw" firstAttribute="trailing" secondItem="Scr-ol-lVw" secondAttribute="trailing" id="Trl-Cnt-Vw"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Sfg-Gde-RVC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Scr-ol-lVw" firstAttribute="top" secondItem="Sfg-Gde-RVC" secondAttribute="top" id="Top-Scr-Vw"/>
+                            <constraint firstItem="Sfg-Gde-RVC" firstAttribute="trailing" secondItem="Scr-ol-lVw" secondAttribute="trailing" id="Trl-Scr-Vw"/>
+                            <constraint firstItem="Scr-ol-lVw" firstAttribute="leading" secondItem="Sfg-Gde-RVC" secondAttribute="leading" id="Ld-Scr-Vw"/>
+                            <constraint firstItem="Sfg-Gde-RVC" firstAttribute="bottom" secondItem="Scr-ol-lVw" secondAttribute="bottom" id="Btm-Scr-Vw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chartsContainerView" destination="Cht-Cnt-Vw" id="Out-Cht-Cnt"/>
+                        <outlet property="clinicalScoresView" destination="Cln-Scr-Vw" id="Out-Cln-Scr"/>
+                        <outlet property="contentView" destination="Con-tnt-Vw" id="Out-Cnt-Vw"/>
+                        <outlet property="dateLabel" destination="Dte-Lbl-001" id="Out-Dte-Lbl"/>
+                        <outlet property="exportButton" destination="Exp-Btn-001" id="Out-Exp-Btn"/>
+                        <outlet property="headerView" destination="Hdr-Vw-001" id="Out-Hdr-Vw"/>
+                        <outlet property="keyFindingsView" destination="Key-Fnd-Vw" id="Out-Key-Fnd"/>
+                        <outlet property="progressButton" destination="Prg-Btn-001" id="Out-Prg-Btn"/>
+                        <outlet property="recommendationLabel" destination="Rec-Lbl-001" id="Out-Rec-Lbl"/>
+                        <outlet property="riskIndicatorView" destination="Rsk-Ind-Vw" id="Out-Rsk-Ind"/>
+                        <outlet property="riskLabel" destination="Rsk-Lbl-001" id="Out-Rsk-Lbl"/>
+                        <outlet property="scrollView" destination="Scr-ol-lVw" id="Out-Scr-Vw"/>
+                        <outlet property="shareButton" destination="Shr-Btn-001" id="Out-Shr-Btn"/>
+                        <outlet property="spatialMetricsView" destination="Spt-Met-Vw" id="Out-Spt-Met"/>
+                        <outlet property="temporalMetricsView" destination="Tmp-Met-Vw" id="Out-Tmp-Met"/>
+                        <outlet property="titleLabel" destination="Ttl-Lbl-001" id="Out-Ttl-Lbl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Plc-Hld-RVC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
